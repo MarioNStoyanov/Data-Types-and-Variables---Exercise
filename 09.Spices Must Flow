@@ -1,0 +1,34 @@
+using System;
+
+namespace _09.Spice_Must_Flow
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            uint startingYield = uint.Parse(Console.ReadLine());
+            int counter = 0;
+            uint finalYield = 0;
+            int workersEating = 0;
+
+            while (startingYield >= 100)
+            {
+                workersEating += 26;
+                counter++;
+                finalYield += startingYield-26;
+                startingYield -= 10;
+                if (workersEating>finalYield)
+                {
+                    return;
+                }
+                if (startingYield<100)
+                {
+                 finalYield -= 26;
+
+                }
+            }
+            Console.WriteLine(counter);
+            Console.WriteLine(finalYield);
+        }
+    }
+}
